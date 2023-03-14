@@ -20,8 +20,8 @@ while gameplay:
         print(f"The word starts with letter {currentWord[0]}")
 
     guess = ""
-    while not len(guess) == 5 or guess.isalpha():
-        guess = input(f"Guess {guesses}{' for team ' + user[0] if user else ''}. Please provide a guess of 5 letters or type stop to stop.")
+    while not len(guess) == 5:
+        guess = input(f"Guess {guesses}{' for team ' + user[0] if user else ''}. Please provide a guess of 5 letters or type stop to stop.\nDo not use numbers, we will not let you redo your guess.\nFill in here: ")
         if guess == "stop":
             guesses = maxguesses
             guess = "stop!"
