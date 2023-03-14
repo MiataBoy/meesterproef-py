@@ -43,10 +43,10 @@ def filterGuess(guess: str, currentWord: str) -> str:
     for letter in splitguess:
         if letter in splitword:
             index = splitguess.index(letter)
-            if splitguess[index] != splitword[index]:
-                splitguess[index] = Yellow + letter + Reset
-            else:
+            if splitguess[index] == splitword[index]:
                 splitguess[index] = Green + letter + Reset
+            else:
+                splitguess[index] = Yellow + letter + Reset
 
     return "".join(splitguess)
 

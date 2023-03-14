@@ -14,6 +14,7 @@ user = getTeamOrPlayer()
 maxguesses = 5 if not user else 10
 
 while gameplay:
+    print(currentWord)
     if failedguesses:
         print(f"Previous guess{' by team ' + user[1] if user else ''}: {failedguesses[guesses - 1]}")
     else:
