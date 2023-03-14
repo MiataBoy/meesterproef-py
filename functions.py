@@ -41,15 +41,18 @@ def filterGuess(guess: str, currentWord: str) -> str:
     splitword = list(currentWord)
 
     for letter in splitguess:
+        amount_of_letters_in_current_word = [i for i in splitword if i == letter]
+        amount_of_letters_in_guess = [i for i in list(guess) if i == letter]
         if letter in splitword:
             index = splitguess.index(letter)
             if splitguess[index] == splitword[index]:
                 splitguess[index] = Green + letter + Reset
-            else:
+            elif len(amount_of_letters_in_current_word) >= len(amount_of_letters_in_guess) and splitguess[index] != splitword[index]:
                 splitguess[index] = Yellow + letter + Reset
+            else:
+                splitguess[index] = letter + Reset
 
     return "".join(splitguess)
-
 
 def playAgain(text: str):
     answer = ""
