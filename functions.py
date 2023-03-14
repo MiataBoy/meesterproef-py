@@ -1,5 +1,6 @@
 import random
 
+
 def getTeamOrPlayer() -> list:
     playerOrTeam = ""
     teams = []
@@ -22,12 +23,14 @@ def checkForTeam(teamlist: list, ifplayer: str, ifteam: str or int) -> str or in
     else:
         return ifteam
 
+
 def getRandomWord(words: list) -> str:
     chosenWord = ""
     while len(chosenWord) != 5:
         chosenWord = random.choice(words)
 
     return chosenWord
+
 
 def filterGuess(guess: str, currentWord: str) -> str:
     Green = "\u001b[32m"
@@ -41,11 +44,12 @@ def filterGuess(guess: str, currentWord: str) -> str:
         if letter in splitword:
             index = splitguess.index(letter)
             if splitguess[index] != splitword[index]:
-                splitguess[index] = Yellow+letter+Reset
+                splitguess[index] = Yellow + letter + Reset
             else:
-                splitguess[index] = Green+letter+Reset
+                splitguess[index] = Green + letter + Reset
 
     return "".join(splitguess)
+
 
 def playAgain(text: str):
     answer = ""
@@ -57,4 +61,3 @@ def playAgain(text: str):
 
     elif answer == "y":
         return True
-
